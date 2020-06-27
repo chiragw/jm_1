@@ -1,0 +1,18 @@
+96- background: rgb(64,64,64);
+background: linear-gradient(90deg, rgba(64,64,64,1) 0%, rgba(17,18,17,1) 33%); background-repeat: no-repeat; background-position: center;
+
+83- #main-nav{
+   background: rgb(64,64,64);
+background: linear-gradient(90deg, rgba(64,64,64,1) 0%, rgba(17,18,17,1) 33%);
+}
+
+86- background: #fff; color: black;
+
+118- title, logo, name
+
+7- title(JM Kalia &amp; Company)
+
+css
+70- body(delete)
+669-#main-nav{
+border(Delete)}

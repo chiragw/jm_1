@@ -67,9 +67,7 @@ body,input,textarea,article {
 	word-wrap: break-word;
 	-ms-word-wrap: break-word;
 }
-body {
-	border-top: 6px solid #57ad68;
-}
+
 hr {
 	border-color: #eaeaea;
 	border-style: solid none none;
@@ -669,7 +667,7 @@ a.more-link:hover {
 /* =Menu
 --------------------------------------------------------------*/
 #main-nav {
-	border: 1px solid #439f55;
+	
 	cursor: pointer;
 	background: #57ad68;
 	color: #fff;

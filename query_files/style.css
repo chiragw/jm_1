@@ -4,7 +4,7 @@ Theme URI: http://colorlib.com/wp/travelify/
 Author: Colorlib
 Author URI: http://colorlib.com/wp/
 Description: Travelify is a clean, simple, responsive and customizable WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, ecommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready (compatible with WPML plugin) and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT, WP-PageNavi, Contact Form 7 and other popular plugins. Theme available in English, French, German, Hungarian, Italian, Spanish, Dutch, Hebrew, Slovak, Turkish, Swedish, Brazilian Portuguese, Polish, Finnish, Bulgarian, Persian (Farsi), Greek, Russian and Chinese.
-Version: 3.0.4
+Version: 3.0.
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: grid-layout, footer-widgets, blog, education, entertainment, food-and-drink, news, photography, portfolio
@@ -67,9 +67,7 @@ body,input,textarea,article {
 	word-wrap: break-word;
 	-ms-word-wrap: break-word;
 }
-body {
-	border-top: 6px solid #57ad68;
-}
+
 hr {
 	border-color: #eaeaea;
 	border-style: solid none none;
@@ -360,11 +358,12 @@ a {
 	text-decoration: none;
 }
 .entry-content a {
-	text-decoration: underline;
+	text-decoration: none;
+	margin-bottom: 7px; 
 }
 a:focus,a:active,a:hover {
 	color: #439f55;
-	text-decoration: none;
+	text-decoration: underline;
 }
 /* Images */
 figure {
@@ -510,18 +509,18 @@ a.more-link:hover {
 /* =Header
 -----------------------------------------------*/
 #branding {
-	margin-top: 15px;
+	margin-top: 5px;
 }
 .hgroup-wrap {
-	padding-top: 15px;
-	padding-bottom: 35px;
+	padding-top: 5px;
+	padding-bottom: 16px;
 }
 .hgroup-wrap a {
 	display: block;
 }
 #site-logo {
 	float: left;
-	margin-top: 32px;
+	margin-top: 16px;
 }
 #site-title {
 	font: 36px 'Ubuntu', sans-serif;
@@ -546,7 +545,7 @@ a.more-link:hover {
 }
 .hgroup-right {
 	float: right;
-	margin-top: 38px;
+	margin-top: 8px;
 }
 /* Social Profiles */
 .social-icons {
@@ -669,7 +668,7 @@ a.more-link:hover {
 /* =Menu
 --------------------------------------------------------------*/
 #main-nav {
-	border: 1px solid #439f55;
+
 	cursor: pointer;
 	background: #57ad68;
 	color: #fff;
@@ -688,8 +687,9 @@ a.more-link:hover {
 	display: block;
 	float: left;
 	font-size: 14px;
-	padding: 8px 12px 0 10px;
+	padding: 8px 8px 0 10px;
 	height: 32px;
+	border-right: 1px solid #fff;
 }
 #main-nav a:hover,#main-nav ul li.current-menu-item a,#main-nav ul li.current_page_ancestor a,#main-nav ul li.current-menu-ancestor a,#main-nav ul li.current_page_item a,#main-nav ul li:hover > a {
 	background: #439f55;
@@ -918,8 +918,9 @@ a.more-link:hover {
 }
 #primary {
 	float: left;
-	margin-left: 3.06%;
-	width: 65.64%;
+	margin-top: 0%;
+	margin-left: 0%;
+	width: 100%;
 }
 #content .post {
 	padding-top: 20px;
@@ -1104,13 +1105,13 @@ thead th,tfoot th,thead tr:hover th,tfoot tr:hover th {
 /* Sidebar */
 #secondary {
 	float: left;
-	margin-left: 3.06%;
-	width: 31.28%;
+	margin-left: 1%;
+	width: 15%;
 }
 /* Left Sidebar Template */
 .left-sidebar-template #primary,
 .left-sidebar-template #content-woocommerce {
-	float: right;
+	float: left;
 }
 .left-sidebar-template #secondary {
 	float: left;
@@ -1539,12 +1540,19 @@ ul.default-wp-page li a:active {
 -----------------------------------------------*/
 .widget {
 	background: #fff;
-	padding: 15px;
+	padding: 7px;
 	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	border-radius: 2px;
 	margin-bottom: 30px;
+	border: 2px solid black;
+	box-shadow: 3px 3px 3px black; 
 }
+.widget:hover {
+	padding: 0;
+	box-shadow: 7px 7px 7px black;
+}
+
 
 .widget ul li {
 	background-image: url('./images/arrow-right.png');
@@ -1560,9 +1568,10 @@ ul.default-wp-page li a:active {
 	background-position: 30px 6px;
 }
 .widget ul li a:hover {
-	color: #439f55;
+	color: black;
 	text-decoration: underline;
 }
+
 .widget-title {
 	font-size: 18px;
 	line-height: 30px;
@@ -1674,7 +1683,7 @@ ul.default-wp-page li a:active {
 	padding: 0 2.5%;
 }
 #footerarea .widget-area {
-	padding: 40px 0;
+	padding: 20px 0;
 }
 #footerarea .widget {
 	padding-left: 15px;
@@ -1883,20 +1892,20 @@ article {
 		padding-bottom: 10px;
 	}
 	#branding {
-		margin-top: 15px;
-	}
+		margin-top: 0px;
+	}d
 	.hgroup-wrap {
-		padding-bottom: 25px;
-		padding-top: 0;
+		padding-bottom: 0px;
+		padding-top: 0px;
 	}
 	.hgroup-right {
-		margin-top: 32px;
+		margin-top: 0px;
 	}
 	.hgroup-right .social-icons {
 		display: none;
 	}
 	#site-logo {
-		margin-top: 25px;
+		margin-top: 0px;
 	}
 	#site-title a img {
 		max-width: 280px;
@@ -1931,7 +1940,7 @@ article {
 		margin-bottom: 5px;
 	}
 	.entry-content {
-		padding-bottom: 0px;
+		padding-bottom: 5px;
 	}
 	/* Column */
 	.column {
@@ -2058,4 +2067,23 @@ article {
 	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
+}
+div .animator{
+	/*animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;*/
+  width: 100%;
+  height: 200px;
+  
+}
+.buton: hover{
+	color: black;
+	background-color: #fff;
+}
+
+@keyframes example {
+  /*from {background-color: black; color: white;}
+  to {background-color: white; color: black;}*/
 }
