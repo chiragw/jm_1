@@ -688,7 +688,7 @@ a.more-link:hover {
 	display: block;
 	float: left;
 	font-size: 14px;
-	padding: 8px 8px 0 10px;
+	padding: 8px 8px 0 8px;
 	height: 32px;
 }
 #main-nav a:hover,#main-nav ul li.current-menu-item a,#main-nav ul li.current_page_ancestor a,#main-nav ul li.current-menu-ancestor a,#main-nav ul li.current_page_item a,#main-nav ul li:hover > a {
