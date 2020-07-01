@@ -155,11 +155,11 @@ background: linear-gradient(90deg, rgba(64,64,64,1) 0%, rgba(17,18,17,1) 33%); b
 <li id="menu-item-188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188"><a href="laws.html"><i class="_mi _before dashicons dashicons-welcome-learn-more" aria-hidden="true"></i><span>Laws of India</span></a></li>
 </ul><select class="tinynav tinynav1"><option value="index.html" selected="selected">Home</option><option value="contact.html">Contact Us</option><option value="about.html">About Us</option><option value="event.html">Events</option><option value="publication.html">Publications</option><option value="useful.html">Useful Links</option><option value="query.html">Free Query</option><option value="casestatus.html">Case Status</option><option value="laws.html">Laws of India</option></select></div><!-- .container -->
 					</nav><!-- #main-nav -->		
-		<section class="featured-slider"><div class="slider-cycle" style="width: 100%; overflow: hidden; height: 208px;" onmouseenter="pauseSlides()" onmouseleave="startSlides()">
+		<section class="featured-slider"><div class="slider-cycle" style="width: 100%; overflow: hidden; height: 208px;" onmouseover="pauseSlides()" onmouseout="resumeSlides()">
 
 				<div class="slides displaynone" style="position: absolute; top: 0px; left: -1018px; display: none; z-index: 4; width: 100%; opacity: 1;" 
 				 ><figure><a href="#" title="Constitution of India"><img width="1018" height="208" src="./pics/cons.png" style="height: 370px; opacity: 0.35;" class="pngfix wp-post-image" alt="Constitution of India" title="Constitution of India"></a></figure>
-							<article class="featured-text" style=" position: absolute; left: 34%;"><div class="featured-title" style="font-size: 28px;"><a href="#" title="Constitution of India" style="text-transform: capitalize;font-weight: bold; text-transform: uppercase;">Constitution of India</a><br>
+							<article class="featured-text" style=" position: absolute; left: 34%;"><div class="featured-title" style="font-size: 28px;"><a href="./pdfs/consti.pdf" target="_blank" title="Constitution of India" style="text-transform: capitalize;font-weight: bold; text-transform: uppercase;">Constitution of India</a><br>
 								<!-- <q style="font-size: 20px;">Banks are the backbone of the economy. It is the safest place of investment for common people looking to not take too many risks. If the banking system fails, so will the economy</q> -->
 							</div><!-- 
 
@@ -864,63 +864,136 @@ but skilful intrigue devised by intelligent men can kill even those who are in t
 			//   slides[slideIndex-1].style.display = "block";
 			  
 			// }
-			var slideIndex = 1;
-  var millis = 6000;
-  var interval;
+
+			//here
+
+	// 		var slideIndex = 1;
+ //  var millis = 6000;
+ //  var interval;
   
-  startSlides();
+ //  startSlides();
   
-  function startSlides(){
-    pauseSlides();
-    nextSlide();
-    interval = setInterval(nextSlide, millis);
-  }
+ //  function startSlides(){
+ //    pauseSlides();
+ //    nextSlide();
+ //    interval = setInterval(nextSlide, millis);
+ //  }
 
 
-  // function resumeSlides() {
-  //   nextSlide();
-  // }
+ // function resumeSlides() {
+ //    nextSlide();
+ //  } 
 
-  function pauseSlides() {
-    clearInterval(interval);
-  }
+ //  function pauseSlides() {
+ //    clearInterval(interval);
+ //  }
 
-  function nextSlide() {
-    showSlide();
-    slideIndex++;
-  }
+ //  function nextSlide() {
+ //    showSlide();
+ //    slideIndex++;
+ //  }
 
-  function plusSlides(n) {
-    clearInterval(interval);
-    slideIndex += n;
-    nextSlide();
-    interval = setInterval(nextSlide, millis);
-  }
+ //  function plusSlides(n) {
+ //    clearInterval(interval);
+ //    slideIndex += n;
+ //    nextSlide();
+ //    interval = setInterval(nextSlide, millis);
+ //  }
 
-  function currentSlide(n) {
-    clearInterval(interval);
-    slideIndex = n + 1;
-    nextSlide();
-    interval = setInterval(nextSlide, millis);
-  }
+ //  function currentSlide(n) {
+ //    clearInterval(interval);
+ //    slideIndex = n + 1;
+ //    nextSlide();
+ //    interval = setInterval(nextSlide, millis);
+ //  }
 
-  function showSlide() {
-    var i;
-    var slides = document.getElementsByClassName("slides");
+ //  function showSlide() {
+ //    var i;
+ //    var slides = document.getElementsByClassName("slides");
     
-    for (i = 0; i < slides.length; i++) {
+ //    for (i = 0; i < slides.length; i++) {
+ //      slides[i].style.display = "none";
+ //    }
+ //    if (slideIndex > slides.length) {
+ //      slideIndex = 1;
+ //    }
+ //    if (slideIndex < 1) {
+ //      slideIndex = slides.length;
+ //    }
+    
+ //    slides[slideIndex - 1].style.display = "block";
+    
+ //  }
+
+ //to here
+
+ var slideIndex = 1;
+
+var myTimer;
+
+var slideshowContainer;
+
+window.addEventListener("load",function() {
+    showSlides(slideIndex);
+    myTimer = setInterval(function(){plusSlides(1)}, 4000);
+  
+    //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    slideshowContainer = document.getElementsByClassName('slider-cycle')[0];
+  
+    //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+    // slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+  
+    slideshowContainer.addEventListener('mouseover', pause)
+    slideshowContainer.addEventListener('mouseout', resume)
+})
+
+// NEXT AND PREVIOUS CONTROL
+function plusSlides(n){
+  clearInterval(myTimer);
+  if (n < 0){
+    showSlides(slideIndex -= 1);
+  } else {
+   showSlides(slideIndex += 1); 
+  }
+  
+  //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+  
+  if (n === -1){
+    myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+  } else {
+    myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  }
+}
+
+//Controls the current slide and resets interval if needed
+function currentSlide(n){
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
-    }
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-    if (slideIndex < 1) {
-      slideIndex = slides.length;
-    }
-    
-    slides[slideIndex - 1].style.display = "block";
-    
   }
+
+  slides[slideIndex-1].style.display = "block";
+  
+}
+
+pause = () => {
+  clearInterval(myTimer);
+}
+
+resume = () =>{
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(slideIndex)}, 4000);
+}
 		</script>	
         
           
@@ -940,7 +1013,7 @@ but skilful intrigue devised by intelligent men can kill even those who are in t
             <div id="rd-box" style="background-color: #fff ; padding: 10px;">
             <a href="blog.html"> 
                 <img src= "./jm_files/blogpic.jpg" style="width:220px; height:40px; margin-bottom: 15px;"></a>
-            <div style="background-color: #fff; text-align: left; padding: 10px; border: 1.2px solid black;">
+<!--             <div style="background-color: #fff; text-align: left; padding: 10px; border: 1.2px solid black;">
                 <h3 class="widget-title" style="font-size: 20px; text-transform: uppercase; font-weight: bold;">Legal Updates</h3>		
                 <ul class="lupdate">
 					<li>
@@ -956,7 +1029,7 @@ but skilful intrigue devised by intelligent men can kill even those who are in t
 						<a href="blog_4.html">Know Your Consumer Rights</a>
 					</li>
 				</ul> 
-			</div>
+			</div> -->
             </div> 
 <!-- <div>
             <ul class="lupdate">
@@ -1168,7 +1241,7 @@ function showSlides(n) {
 		<aside id="text-5" class="widget widget_text">			<div 
 			class="textwidget"><a href="mailto:jmkaliaandcompany@gmail.com" target="_blank"><img src="./jm_files/emailpic.jpg"></a></div>
 		</aside>
-		<aside id="recent-posts-3" class="widget widget_recent_entries">		<h3 class="widget-title">Legal Updates</h3>		<ul>
+<!-- 		<aside id="recent-posts-3" class="widget widget_recent_entries">		<h3 class="widget-title">Legal Updates</h3>		<ul>
 					<li>
 				<a href="#">Protection of  Environment</a>
 						</li>
@@ -1182,7 +1255,7 @@ function showSlides(n) {
 				<a href="#">Know Your Consumer Rights</a>
 						</li>
 				</ul>
-		</aside>
+		</aside> -->
 		<aside id="text-4" class="widget widget_text">			<div class="textwidget"><a href="blog.html"><img src="./jm_files/blogpic.jpg"></a></div>
 		</aside>
 </div><!-- #secondary --></div><!-- #container -->
